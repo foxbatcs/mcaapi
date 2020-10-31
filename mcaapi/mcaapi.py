@@ -174,3 +174,31 @@ class MapID():
         '''
         url = url + '/mapid/mcr/{})'.format(mcr)
         return api_response(url, head)
+    
+    class BPPMH():
+    def details(account_number, account_type = 'c', url = URL, head = HEAD):
+        url = url + '/bpp/{}/{}'.format(account_type, account_number)
+        return api_response(url, head)
+    '''
+
+    '''  
+
+    def account(account_number, account_type = 'c', url = URL, head = HEAD):
+        url = url + '/bpp/{}/{}/name'.format(account_type, account_number)
+        return api_response(url, head)
+    '''
+
+    '''  
+
+    def mhAccount(account_number, url = URL, head = HEAD):
+        url = url + '/mh/{}'.format(account_number)
+        return api_response(url, head)
+    '''
+
+    '''  
+    def mhVIN(vin_number, url = URL, head = HEAD):
+        url = url + '/mh/vin/{}'.format(vin_number)
+        return api_response(url, head)
+    '''
+
+    '''
