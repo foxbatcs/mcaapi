@@ -175,7 +175,7 @@ class MapID():
         url = url + '/mapid/mcr/{})'.format(mcr)
         return api_response(url, head)
     
-    class BPPMH():
+class BPPMH():
     def details(account_number, account_type = 'c', url = URL, head = HEAD):
         url = url + '/bpp/{}/{}'.format(account_type, account_number)
         return api_response(url, head)
