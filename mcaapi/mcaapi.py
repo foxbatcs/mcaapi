@@ -175,30 +175,69 @@ class MapID():
         url = url + '/mapid/mcr/{})'.format(mcr)
         return api_response(url, head)
     
-    class BPPMH():
+class BPPMH():
+    '''
+    '''
     def details(account_number, account_type = 'c', url = URL, head = HEAD):
+        '''
+        '''
         url = url + '/bpp/{}/{}'.format(account_type, account_number)
         return api_response(url, head)
-    '''
-
-    '''  
-
+    
     def account(account_number, account_type = 'c', url = URL, head = HEAD):
+        '''
+        '''
         url = url + '/bpp/{}/{}/name'.format(account_type, account_number)
         return api_response(url, head)
-    '''
-
-    '''  
 
     def mhAccount(account_number, url = URL, head = HEAD):
+        '''
+        '''
         url = url + '/mh/{}'.format(account_number)
         return api_response(url, head)
-    '''
 
-    '''  
     def mhVIN(vin_number, url = URL, head = HEAD):
+        '''
+        '''
         url = url + '/mh/vin/{}'.format(vin_number)
         return api_response(url, head)
-    '''
 
+class Export():
     '''
+    '''
+    def RealPropertySearch(query, url = URL, head = HEAD):
+        '''
+        '''
+        url = url + '/search/export/property/{}'.format(query)
+        return api_response(url, head) 
+    
+    def BusinessPropertySearch(query, url = URL, head = HEAD):
+        '''
+        '''
+        url = url + '/search/export/bpp/{}'.format(query)
+        return api_response(url, head)
+    
+    def MobileHomeSearch(query, url = URL, head = HEAD):
+        '''
+        '''
+        url = url + '/search/export/mh/{}'.format(query)
+        return api_response(url, head) 
+    
+    def RentalPropertySearch(query, url = URL, head = HEAD):
+        '''
+        '''
+        url = url + '/search/export/rentals/{}'.format(query)
+        return api_response(url, head) 
+
+class Property():
+    '''
+    '''
+#Work in Progress
+    pass
+        
+class Deed():
+    def deed(apn, url = URL, head = HEAD):
+        '''
+        '''
+      url = url + '/deeds/chain/{}'.format(apn)
+      return api_response(url, head)
