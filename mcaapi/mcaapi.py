@@ -143,7 +143,6 @@ class Parcel():
 
 class MapID():
     '''
-
     '''    
     def parcel(apn, url = URL, head = HEAD):
         '''
