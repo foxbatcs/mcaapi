@@ -1,5 +1,9 @@
 # Assessor API request URL
-URL = 'https://api.mcassessor.maricopa.gov/api'
+URL = 'https://api.mcassessor.maricopa.gov/'
 
-API_TOKEN = 'YOUR API TOKEN'
-HEAD = {'X-MC-AUTH': 'token {}'.format(API_TOKEN)}
+API_TOKEN = 'YOUR_API_TOKEN'
+PAYLOAD={}
+HEAD = {
+  'AUTHORIZATION': API_TOKEN,
+  'Cookie': 'pecan=261489418.47873.0000'
+}
