@@ -8,10 +8,10 @@ def api_response(url, headers = HEAD, data = PAYLOAD):
   #print(apiResponseDictKeys)
   return apiResponse#, apiResponseDictKeys
 
-
-
 class Search():
     '''
+    Parameters: query
+    URL encoded query to search for
     '''
     def all(query, limit = 1000, offset = 0, url = URL, head = HEAD):
         '''
@@ -84,7 +84,7 @@ class Search():
 
 class Parcel():
     '''
-    {apn}
+    Parameters: apn
     APN (Assessor Parcel Number or APN for short) must formatted with (or without) spaces, dashes, or dots.
     '''
     def details(apn, url = URL, head = HEAD):
@@ -225,17 +225,18 @@ class Parcel():
 
 class MapID():
     '''
-    {apn}
+    Parameters:
+    - apn
     APN (Assessor Parcel Number or APN for short) must formatted with (or without) spaces, dashes, or dots.
-    {mcr}
+    - mcr
     MCR Number.
-    {sub}
+    - sub
     Subdivision name. Must be URL encoded.
-    {str}
+    - str
     Section/Township/Range. Can be formatted with (or without) spaces, dashes, or dots. '11E01', '011E01', or '01-1E-01'
-    {book}
+    - book
     Three digit book portion of an APN.
-    {map}
+    - map
     Two digit map portion of an APN.
     '''
     def parcel(apn, url = URL, head = HEAD):
@@ -287,11 +288,12 @@ class MapID():
 
 class BPPMH():
     '''
-    {an}
+    Parameters:
+    - an
     Business personal property account number.
-    {at}
+    - at
     Business personal property account type character. Must be lower case and must be a single letter of either 'c' for Commercial, 'm' for Multiple or 'l' for Lessor
-    {ty}
+    - ty
     Four digit tax year. Defaults to current tax year if omitted.
     '''
     def details(account_number, account_type = 'c', url = URL, head = HEAD):
@@ -340,7 +342,7 @@ class BPPMH():
 class Export():
     '''
     CURRENTLY UNSUPPORTED: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
-    {query}
+    Parameters: query
     URL encoded query to search for
     '''
     def RealPropertySearch(query, url = URL, head = HEAD):
@@ -482,7 +484,7 @@ class Property():
 
 class Deed():
     '''
-    {apn}
+    Parameters: apn
     APN (Assessor Parcel Number or APN for short) must formatted with (or without) spaces, dashes, or dots.
     '''
     def deed(apn, url = URL, head = HEAD):

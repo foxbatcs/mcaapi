@@ -4,7 +4,7 @@ except ImportError:
     from distutils.core import setup
 
 
-import os.path
+import os
 
 readme = ""
 here = os.path.abspath(os.path.dirname(__file__))
@@ -13,11 +13,10 @@ if os.path.exists(readme_path):
     with open(readme_path, "rb") as stream:
         readme = stream.read().decode("utf8")
 
-
 setup(
     long_description=readme,
     name="mcaapi",
-    version="0.0.1",
+    version="0.0.3",
     description="A Python wrapper for the Maricopa County Assessor API.",
     python_requires="==3.*",
     project_urls={"repository": "https://github.com/foxbatcs/mcaapi"},
