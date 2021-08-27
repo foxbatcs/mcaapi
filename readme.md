@@ -29,6 +29,7 @@ Here is the documentation for each Class, which defines the inputs and outputs o
 ## Search (mcaapi.Search)
 ### All
 Takes an address, parcel number, name, zip code, city, etc, and returns a JSON objects for matching results.
+
         Example: mcaapi.Search.all('301 W Jefferson')
     
 ## Parcel (mcaapi.Parcel)
