@@ -15,7 +15,7 @@ this is run, it will prompt you for the API token. Simply paste the token into
 the prompt, and it will store it in a file located in the source directory of
 the library.
 
-# Methods
+# Classes
 
 The structure of the wrapper follows the same structure as the API documentation
 which can be downloaded here: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
@@ -24,6 +24,7 @@ Not all API calls are supported at this time, per the documentation. I have stil
 written methods for all of these, but they will only be functional after they fix
 the API.
 
+Here is the documentation for each Class, which defines the inputs and outputs of each method, as well as examples.
 
 ## Search (mcaapi.Search)
 
