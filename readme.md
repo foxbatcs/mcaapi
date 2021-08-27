@@ -1,4 +1,4 @@
-#API Token
+# API Token
 
 Use of this library requires obtaining an API Key from
 The Maricopa County Assessor's Office. This can be done by
@@ -15,7 +15,7 @@ this is run, it will prompt you for the API token. Simply paste the token into
 the prompt, and it will store it in a file located in the source directory of
 the library.
 
-#Methods
+# Methods
 
 The structure of the wrapper follows the same structure as the API documentation
 which can be downloaded here: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
