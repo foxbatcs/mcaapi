@@ -1,5 +1,9 @@
-from .input import *
-from .library import *
+from .inputs import *
+
+# libraries
+import requests
+import json
+import urllib.parse
 
 def api_response(url, headers = HEAD, data = PAYLOAD):
   response = requests.request("GET", url, headers=headers, data=data)

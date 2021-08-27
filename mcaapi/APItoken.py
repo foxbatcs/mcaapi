@@ -1,6 +1,9 @@
 import os
+#defines absolute path and the api token file name
+here = os.path.abspath(os.path.dirname(__file__))
+token_path = os.path.join(here, 'api_token.txt')
 
-def apiToken():
+def apiToken(token_path):
     api_token = input('''
 Use of this library requires obtaining an API Key from
 The Maricopa County Assessor's Office. This can be done by
@@ -15,7 +18,7 @@ shortly after with the API Key. You can hit CTRL-C to exit.
 If you already have a key, please enter it here:
     ''')
 
-    with open('api_token.txt', 'w') as file:
+    with open(token_path, 'w') as file:
         file.write(api_token)
         file.close()
 
@@ -30,22 +33,20 @@ If you already have a key, please enter it here:
     ''')
     return api_token
 
-if os.path.isfile('api_token.txt') == True:
-    with open('api_token.txt', 'r') as file:
+#print('APItoken.py CWD: ', os.getcwd())
+if os.path.isfile(token_path) == True:
+    with open(token_path, 'r') as file:
         API_TOKEN = file.read().strip()
 else:
-    with open('api_token.txt', 'w') as file:
-        API_TOKEN = apiToken()
-        file.write(API_TOKEN)
-        print(API_TOKEN)
-        file.close()
-        if API_TOKEN == '':
-            MCA_API_TKN = API_TOKEN
-            print('''
-instructions to call the method again
-            ''')
-        else:
-            MCA_API_TKN = API_TOKEN
+    API_TOKEN = apiToken(token_path)
+    #print(API_TOKEN)
+
+#         if API_TOKEN == '':
+#             MCA_API_TKN = API_TOKEN
+#             print('''
+# instructions to call the method again
+#             ''')
+#         else:
+#             MCA_API_TKN = API_TOKEN
 
     #print('api_token.txt isfile: False')
-    file.close()

@@ -1,7 +1,7 @@
 setup.py
+./mcaapi/APItoken.py
 ./mcaapi/__init__.py
-./mcaapi/input.py
-./mcaapi/library.py
+./mcaapi/inputs.py
 ./mcaapi/mcaapi.py
 mcaapi.egg-info/PKG-INFO
 mcaapi.egg-info/SOURCES.txt
