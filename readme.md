@@ -1,4 +1,5 @@
 #API Token
+
 Use of this library requires obtaining an API Key from
 The Maricopa County Assessor's Office. This can be done by
 visiting https://preview.mcassessor.maricopa.gov/contact/
@@ -15,6 +16,7 @@ the prompt, and it will store it in a file located in the source directory of
 the library.
 
 #Methods
+
 The structure of the wrapper follows the same structure as the API documentation
 which can be downloaded here: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
@@ -24,8 +26,10 @@ the API.
 
 
 ## Search (mcaapi.Search)
+
     All: Takes an address, parcel number, name, zip code, city, etc
-    Example: `mcaapi.Search.all('301 W Jefferson')`
+    Example: mcaapi.Search.all('301 W Jefferson')
+    
 ## Parcel (mcaapi.Parcel)
 
 ## MapID (mcaapi.MapID)
