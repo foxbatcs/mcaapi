@@ -16,7 +16,7 @@ if os.path.exists(readme_path):
 setup(
     long_description=readme,
     name="mcaapi",
-    version="0.0.4",
+    version="0.0.5",
     description="A Python wrapper for the Maricopa County Assessor API.",
     python_requires="==3.*",
     project_urls={"repository": "https://github.com/foxbatcs/mcaapi"},
