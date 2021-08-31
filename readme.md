@@ -141,9 +141,9 @@ Returns a JSON array of map file names.
 
 ## Business Personal Property/Mobile Homes (mcaapi.BPPMH)
 **Parameters:**
- * {an}    Business personal property account number.
- * {at}    Business personal property account type character. Must be lower case and must be a single letter of either 'c' for Commercial, 'm' for Multiple or 'l' for Lessor
- * {ty}    Four digit tax year. Defaults to current tax year if omitted.
+ * `{an}`   Business personal property account number.
+ * `{at}`    Business personal property account type character. Must be lower case and must be a single letter of either 'c' for Commercial, 'm' for Multiple or 'l' for Lessor
+ * `{ty}`    Four digit tax year. Defaults to current tax year if omitted.
 
 ### details('account_number')
 Returns either account details for a single, commercial account or account details
