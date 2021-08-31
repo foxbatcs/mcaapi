@@ -28,90 +28,162 @@ Here is the documentation for each Class, which defines the inputs and outputs o
 
 ## Search (mcaapi.Search)
 
-### all('string')
-
+### all('query')
 Takes an address, parcel number, name, zip code, city, etc, and returns a JSON object for matching results.
 
         Example: mcaapi.Search.all('301 W Jefferson')
 
-### subdivisions('string')    
+### subdivisions('subdivision_name')    
+Searches only subdivision names and returns a JSON object with subdivision names and parcel counts.
 
-### realProperty('string')
+        Example: mcaapi.Search.subdivisions('phoenix')
 
-### bpp('string')
+### realProperty('query')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
-### mh('string')
+### bpp('query')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
-### rentals('string')
+### mh('query')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
-### propertyType('string')
+### rentals('query')
+Searches only rental registrations. Returns a structured JSON result set with only rental
+registrations.
+
+        Example: mcaapi.Search.rentals('phoenix')
+
+### propertyType('query')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ## Parcel (mcaapi.Parcel)
 
-### propertyType('string')
+### details('parcel_number')
+Returns a JSON object with all available parcel data.
 
-### details('string')
+        Example: mcaapi.Parcel.details('11219038A')
 
-### information('string')
+### information('parcel_number')
+Returns a JSON object with information specific to the property.
 
-### address('string')
+        Example: mcaapi.Parcel.information('11219038A')
 
-### latlon('string')
+### address('parcel_number')
+Returns a JSON object with address of the property.
+        Example: mcaapi.Parcel.address('11219038A')
 
-### valuation('string')
+### latlon('parcel_number')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
-### residential('string')
+### valuation('parcel_number')
+Returns a JSON object with the past 5 years of valuation data from a parcel.
 
-### comps('string')
+        Example: mcaapi.Parcel.valuation('11219038A')
 
-### improvement('string')
+### residential('parcel_number')
+Returns a JSON object with all the available residential parcel data. Does not apply to
+commerical, land or agriculture parcels.
 
-### owner('string')
+        Example: mcaapi.Parcel.residential('11219038A')
 
-### rental('string')
+### comps('parcel_number')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
-### zoning('string')
+### improvement('parcel_number')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
+
+### owner('parcel_number')
+Returns a JSON object with all available parcel data
+
+        Example: mcaapi.Parcel.owner('11219038A')
+
+### rental('parcel_number')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
+
+### zoning('parcel_number')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ### mcr('string')
+Returns a JSON object ...
 
-### sec_twn_rng('string')
+        Example: mcaapi.Parcel.mcr('11219038A')
 
-### subdivision('string')
+### sec_twn_rng('parcel_number')
+Returns a JSON object ...
+
+        Example: mcaapi.Parcel.sec_twn_rng('11219038A')
+
+### subdivision('parcel_number')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ## MapID (mcaapi.MapID)
 
-### parcel('string')
+### parcel('parcel_number')
+Returns a JSON array of map file names.
 
-### subdivisions('string')
+        Example: mcaapi.MapID.parcel('11219038A')
 
-### bookmap('string')
+### subdivisions('subdivision_name')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
-### secTwnRng('string')
+### bookmap('book', 'map')
+Returns a JSON array of map file names.
 
-### mcr('string')
+        Example: mcaapi.MapID.bookmap(112, 19)
+
+### secTwnRng('query')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
+
+### mcr('recorder_number')
+Returns a JSON array of map file names.
+
+        Example: mccapi.MapID.mcr(251)
 
 ## Business Personal Property/Mobile Homes (mcaapi.BPPMH)
+**Parameters:**
+    {an}    Business personal property account number.
+    {at}    Business personal property account type character. Must be lower case and must be a single letter of either 'c' for Commercial, 'm' for Multiple or 'l' for Lessor
+    {ty}    Four digit tax year. Defaults to current tax year if omitted.
 
-### details('string')
+### details('account_number')
+Returns either account details for a single, commercial account or account details
+belonging to a multiple or lessor account. Optionally supply a tax year to get a list of accounts for that tax year. Tax year does not apply to commercial accounts.
 
-### account('string')
+        Example: mcaapi.BPPMH.details('1003384')
 
-### mhAccount('string')
+### account('account_number')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
-### mhVIN('string')
+### mhAccount('account_number')
+Returns account details for an unsecured mobile home.
+
+        Example: mcaapi.BPPMH.mcAccount('6214407')
+
+### mhVIN('mh_vin')
+Returns account number on a mobile home VIN.
+
+        Example: mccapi.BPPMH.mhVIN('4C027073US3617')
 
 ## Exports (mcaapi.Export)
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ### realPropertySearch('string')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ### businessPropertySearch('string')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ### mobileHomeSearch('string')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ### rentalPropertySearch('string')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ## Property (mcaapi.Property)
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ## Deeds (mcaapi.Deed)
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
 ### deed('string')
+Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf

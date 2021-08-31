@@ -349,7 +349,7 @@ class Export():
     Parameters: query
     URL encoded query to search for
     '''
-    def RealPropertySearch(query, url = URL, head = HEAD):
+    def realPropertySearch(query, url = URL, head = HEAD):
         '''
         CURRENTLY UNSUPPORTED: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
         Description: Returns a CSV (comma separated values) file with the results of a real property search.
@@ -361,7 +361,7 @@ class Export():
         url = url + '/search/export/property/{}'.format(query)
         pass #return api_response(url, head)
 
-    def BusinessPropertySearch(query, url = URL, head = HEAD):
+    def businessPropertySearch(query, url = URL, head = HEAD):
         '''
         CURRENTLY UNSUPPORTED: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
         Description: Returns a CSV (comma separated values) file with the results of a business personal property search.
@@ -373,7 +373,7 @@ class Export():
         url = url + '/search/export/bpp/{}'.format(query)
         pass #return api_response(url, head)
 
-    def MobileHomeSearch(query, url = URL, head = HEAD):
+    def mobileHomeSearch(query, url = URL, head = HEAD):
         '''
         CURRENTLY UNSUPPORTED: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
         Description: Returns a CSV (comma separated values) file with the results of a mobile home search.
@@ -385,7 +385,7 @@ class Export():
         url = url + '/search/export/mh/{}'.format(query)
         pass #return api_response(url, head)
 
-    def RentalPropertySearch(query, url = URL, head = HEAD):
+    def rentalPropertySearch(query, url = URL, head = HEAD):
         '''
         CURRENTLY UNSUPPORTED: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
         Description: Returns a CSV (comma separated values) file with the results of a real property search.
