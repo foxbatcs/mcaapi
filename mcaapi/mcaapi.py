@@ -75,7 +75,7 @@ class Search():
         url = url + f'/search/rentals/{urllib.parse.quote(query)}?limit={limit}&offset={offset}'
         return api_response(url, head)
 
-    def propertyType(type, limit = 1000, offset = 0, ):
+    def propertyType(type, limit = 1000, offset = 0, url = URL, head = HEAD):
         '''
         CURRENTLY UNSUPPORTED: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
         Potential Values:
@@ -216,7 +216,7 @@ class Parcel():
         print('This method does not provide a response with the test MCR# 251.')
         return api_response(url, head)
 
-    def sec_twn_rng(sectwnrng, url = URL, head = HEAD):
+    def secTwnRng(sectwnrng, url = URL, head = HEAD):
         '''
         DOES NOT PROVIDE A RESPONSE WITH THE TEST SECTWNRNG 8 1N 3E
         Description: Returns a JSON object.
@@ -266,7 +266,7 @@ class MapID():
         Path: /mapid/parcel/{apn}
         Example: https://preview.mcassessor.maricopa.gov/mapid/parcel/112-19-038A
         '''
-        url = url + '/mapid/parcel/{}'.format(apn)
+        url = url + f'/mapid/parcel/{apn}'
         return api_response(url, head)
 
     def subdivisions(sub, url = URL, head = HEAD):
@@ -276,8 +276,9 @@ class MapID():
         Path: /mapid/sub/{sub}
         Example: https://preview.mcassessor.maricopa.gov/mapid/sub/CASA%20REAL%20PHOENIX%201A%20LOT%201-29
         '''
-        url = url + '/mapid/sub/{}'.format(sub)
-        return {'This method is not currently supported by the API.'} #return api_response(url, head)
+        url = url + f'/mapid/sub/{sub}'
+        print('This method is not currently supported by the API.')
+        return api_response(url, head)
 
     def bookmap(book, map, url = URL, head = HEAD):
         '''
@@ -285,7 +286,7 @@ class MapID():
         Path: /mapid/bookmap/{book}/{map}
         Example: https://preview.mcassessor.maricopa.gov/mapid/bookmap/112/19
         '''
-        url = url + '/mapid/bookmap/{}/{}'.format(book, map)
+        url = url + f'/mapid/bookmap/{book}/{map}'
         return api_response(url, head)
 
     def secTwnRng(sec_twn_rng, url = URL, head = HEAD):
@@ -295,16 +296,19 @@ class MapID():
         Path: /mapid/str/{str}
         Example: https://preview.mcassessor.maricopa.gov/mapid/str/8%201N%203E
         '''
-        url = url + '/mapid/str/{}'.format(sec_twn_rng)
-        return {'This method is not currently supported by the API.'} #return api_response(url, head)
+        url = url + f'/mapid/str/{sec_twn_rng}'
+        print('This method is not currently supported by the API.')
+        return api_response(url, head)
 
     def mcr(mcr, url = URL, head = HEAD):
         '''
-        Description: Returns a JSON array of map file names.
-        Path: /mapid/mcr/{mcr}
+        DOES NOT PROVIDE A RESPONSE WITH THE TEST MCR# (251)
+        Description: Returns a JSON object. Works with parcel type(s): Residential, Commercial, Land, Agriculture.
+        Path: /parcel/mcr/{mcr}
         Example: https://preview.mcassessor.maricopa.gov/mapid/mcr/251
         '''
-        url = url + '/mapid/mcr/{})'.format(mcr)
+        url = url + f'/parcel/mcr/{mcr})'
+        print('This method does not provide a response with the test MCR# 251.')
         return api_response(url, head)
 
 class BPPMH():
