@@ -23,7 +23,7 @@ class Search():
         Path: /search/{query}
         Example: https://preview.mcassessor.maricopa.gov/search/Phoenix
         '''
-        url = url + '/search/{}?limit={}&offset={}'.format(urllib.parse.quote(query), limit, offset)
+        url = url + f'/search/{urllib.parse.quote(query)}?limit={limit}&offset={offset}'
         return api_response(url, head)
 
     def subdivisions(query, limit = 1000, offset = 0, url = URL, head = HEAD):
@@ -32,7 +32,7 @@ class Search():
         Path: /search/subdivisions/{query}
         Example: https://preview.mcassessor.maricopa.gov/search/subdivisions/phoenix
         '''
-        url = url + '/search/subdivisions/{}?limit={}&offset={}'.format(urllib.parse.quote(query), limit, offset)
+        url = url + f'/search/subdivisions/{urllib.parse.quote(query)}?limit={limit}&offset={offset}'
         return api_response(url, head)
 
     def realProperty(query, limit = 1000, offset = 0, url = URL, head = HEAD):
@@ -41,7 +41,7 @@ class Search():
         Description: Searches only real property parcels. Returns a structured JSON result set with only real property parcels.
         Path: /search/property/{query}
         Example: https://preview.mcassessor.maricopa.gov/search/property/phoenix'''
-        url = url + '/search/property/{}?limit={}&offset={}'.format(query, limit, offset)
+        url = url + f'/search/property/{urllib.parse.quote(query)}?limit={limit}&offset={offset}'
         return {'This method is not currently supported by the API.'} #return api_response(url, head)
 
     def bpp(query, limit = 1000, offset = 0, url = URL, head = HEAD):
@@ -69,7 +69,7 @@ class Search():
         Path: /search/rentals/{query}
         Example: https://preview.mcassessor.maricopa.gov/search/rentals/phoenix
         '''
-        url = url + '/search/rentals/{}?limit={}&offset={}'.format(query, limit, offset)
+        url = url + f'/search/rentals/{}?limit={}&offset={}'.format(query, limit, offset)
         return api_response(url, head)
 
     def propertyType(type, limit = 1000, offset = 0, ):
@@ -97,7 +97,7 @@ class Parcel():
         Path: /parcel/{apn}
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A
         '''
-        url = url + '/parcel/{}'.format(apn)
+        url = url + f'/parcel/{apn}'
         return api_response(url, head)
 
     def information(apn, url = URL, head = HEAD):
@@ -106,7 +106,7 @@ class Parcel():
         Path: /parcel/{apn}/propertyinfo
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/propertyinfo
         '''
-        url = url + '/parcel/{}/propertyinfo'.format(apn)
+        url = url + f'/parcel/{apn}/propertyinfo'
         return api_response(url, head)
 
     def address(apn, url = URL, head = HEAD):
@@ -115,7 +115,7 @@ class Parcel():
         Path: /parcel/{apn}/address
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/address
         '''
-        url = url + '/parcel/{}/address'.format(apn)
+        url = url + f'/parcel/{apn}/address'
         return api_response(url, head)
 
     def latlon(apn, url = URL, head = HEAD):
@@ -125,7 +125,7 @@ class Parcel():
         Path: /parcel/{apn}/propertyinfo
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/propertyinfo
         '''
-        url = url + '/parcel/{}/geo'.format(apn)
+        url = url + f'/parcel/{apn}/geo'
         pass #return api_response(url, head)
 
     def valuation(apn, url = URL, head = HEAD):
@@ -134,7 +134,7 @@ class Parcel():
         Path: /parcel/{apn}/valuations
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/valuations
         '''
-        url = url + '/parcel/{}/valuations'.format(apn)
+        url = url + f'/parcel/{apn}/valuations'
         return api_response(url, head)
 
     def residential(apn, url = URL, head = HEAD):
@@ -144,7 +144,7 @@ class Parcel():
         Path: /parcel/{apn}
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/residential-details
         '''
-        url = url + '/parcel/{}/residential-details'.format(apn)
+        url = url + f'/parcel/{apn}/residential-details'
         return api_response(url, head)
 
     def comps(apn, url = URL, head = HEAD):
@@ -154,7 +154,7 @@ class Parcel():
         Path: /parcel/{apn}/similar-parcels
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/similar-parcels
         '''
-        url = url + '/parcel/{}/similar-parcels'.format(apn)
+        url = url + f'/parcel/{apn}/similar-parcels'
         pass #return api_response(url, head)
 
     def improvement(apn, url = URL, head = HEAD):
@@ -164,7 +164,7 @@ class Parcel():
         Path: /parcel/{apn}/improvements
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/improvements
         '''
-        url = url + '/parcel/{}/improvements'.format(apn)
+        url = url + f'/parcel/{apn}/improvements'
         pass #return api_response(url, head)
 
     def owner(apn, url = URL, head = HEAD):
@@ -173,7 +173,7 @@ class Parcel():
         Path: /parcel/{apn}/owner-details
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/owner-details
         '''
-        url = url + '/parcel/{}/owner-details'.format(apn)
+        url = url + f'/parcel/{apn}/owner-details'
         return api_response(url, head)
 
     def rental(apn, url = URL, head = HEAD):
@@ -183,7 +183,7 @@ class Parcel():
         Path: /parcel/{apn}/rental-details
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/rental-details
         '''
-        url = url + '/parcel/{}/rental-details'.format(apn)
+        url = url + f'/parcel/{apn}/rental-details'
         pass #return api_response(url, head)
 
     def zoning(apn, url = URL, head = HEAD):
@@ -193,7 +193,7 @@ class Parcel():
         Path: /parcel/{apn}/zoning
         Example: https://preview.mcassessor.maricopa.gov/parcel/112-19-038A/zoning
         '''
-        url = url + '/parcel/{}/zoning'.format(apn)
+        url = url + f'/parcel/{apn}/zoning'
         pass #return api_response(url, head)
 
     def mcr(mcr, url = URL, head = HEAD):
@@ -203,7 +203,7 @@ class Parcel():
         Path: /parcel/mcr/{mcr}
         Example: https://preview.mcassessor.maricopa.gov/parcel/mcr/251
         '''
-        url = url + '/parcel/mcr/{})'.format(mcr)
+        url = url + f'/parcel/mcr/{mcr})'
         return api_response(url, head)
 
     def sec_twn_rng(sectwnrng, url = URL, head = HEAD):
@@ -213,7 +213,7 @@ class Parcel():
         Path: /parcel/mcr/{mcr}
         Example: https://preview.mcassessor.maricopa.gov/parcel/mcr/251
         '''
-        url = url + '/parcel/str/{}'.format(sectwnrng)
+        url = url + f'/parcel/str/{sectwnrng}'
         return api_response(url, head)
 
     def subdivision(sub, rental = False, url = URL, head = HEAD):
@@ -226,9 +226,9 @@ class Parcel():
         Example (only rentals): https://preview.mcassessor.maricopa.gov/parcel/subdivision/24596/rentals
         '''
         if rental == False:
-            url = url + '/parcel/subdivision/{}'.format(sub)
+            url = url + f'/parcel/subdivision/{sub}'
         else:
-            url = url + '/parcel/subdivision/{}/rentals'.format(sub)
+            url = url + f'/parcel/subdivision/{sub}/rentals'
         pass #return api_response(url, head)
 
 class MapID():
@@ -488,7 +488,7 @@ class Property():
     marketarea
     Market area code - IN, and MATCH
     '''
-    return {'This method is not currently supported by the API.'} #return api_response(url, head)
+    #print('This method is not currently supported by the API.') #return api_response(url, head)
 
 class Deed():
     '''
