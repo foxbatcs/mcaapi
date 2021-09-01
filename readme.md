@@ -107,7 +107,8 @@ Not currently supported. Please refer to the documentation: https://preview.mcas
 ### zoning('parcel_number')
 Not currently supported. Please refer to the documentation: https://preview.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf
 
-### mcr('string')
+### mcr(int)
+DOES NOT PROVIDE A RESPONSE WITH THE TEST MCR# (251)
 Returns a JSON object ...
 
         Example: mcaapi.Parcel.mcr('11219038A')

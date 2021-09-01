@@ -198,6 +198,10 @@ class Parcel():
 
     def mcr(mcr, url = URL, head = HEAD):
         '''
+        DOES NOT PROVIDE A RESPONSE WITH THE TEST MCR# (251)
+        Description: Returns a JSON object. Works with parcel type(s): Residential, Commercial, Land, Agriculture.
+        Path: /parcel/mcr/{mcr}
+        Example: https://preview.mcassessor.maricopa.gov/parcel/mcr/251
         '''
         url = url + '/parcel/mcr/{})'.format(mcr)
         return api_response(url, head)
