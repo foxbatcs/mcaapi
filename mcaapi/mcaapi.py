@@ -524,5 +524,6 @@ class Deed():
         Path: /deeds/chain/{apn}
         Example: https://preview.mcassessor.maricopa.gov/deeds/chain/50705902
         '''
-        url = url + '/deeds/chain/{}'.format(apn)
-        return {'This method is not currently supported by the API.'} #return api_response(url, head)
+        url = url + f'/deeds/chain/{apn}'
+        print('This method is not currently supported by the API.')
+        return api_response(url, head)

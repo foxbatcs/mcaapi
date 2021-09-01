@@ -19,8 +19,11 @@ isinstance(mcaapi.Parcel.secTwnRng('8 1N 3E'), list)
 
 # MapID
 isinstance(mcaapi.MapID.parcel('11219038A'), list)
+isinstance(mcaapi.MapID.subdivisions('Phoenix'), list)
 isinstance(mcaapi.MapID.bookmap('112', '19'), list)
+isinstance(mcaapi.MapID.secTwnRng('8 1N 3E'), )
 isinstance(mcaapi.MapID.mcr(251), list)
+
 
 # BPPMH
 isinstance(mcaapi.BPPMH.details('')[''], dict)
