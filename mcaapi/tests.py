@@ -11,7 +11,7 @@ isinstance(mcaapi.Parcel.valuation('11219038A'), list)
 isinstance(mcaapi.Parcel.residential('11219038A'), dict)
 isinstance(mcaapi.Parcel.owner('11219038A'), dict)
 isinstance(mcaapi.Parcel.mcr(251), list)
-isinstance(mcaapi.Parcel.sec_twn_rng('11219038A'), dict)
+isinstance(mcaapi.Parcel.sec_twn_rng('8 1N 3E'), list)
 
 # MapID
 isinstance(mcaapi.MapID.parcel('')[''], dict)
