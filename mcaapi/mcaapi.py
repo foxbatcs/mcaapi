@@ -331,7 +331,7 @@ class BPPMH():
         Example: https://preview.mcassessor.maricopa.gov/bpp/l/1145
         Example: https://preview.mcassessor.maricopa.gov/bpp/l/1145/2020
         '''
-        url = url + '/bpp/{}/{}'.format(account_type, account_number)
+        url = url + f'/bpp/{account_type}/{account_number}'
         return api_response(url, head)
 
     def account(account_number, account_type = 'c', url = URL, head = HEAD):
@@ -343,8 +343,9 @@ class BPPMH():
         Example: https://preview.mcassessor.maricopa.gov/bpp/m/1056/name
         Example: https://preview.mcassessor.maricopa.gov/bpp/l/1145/name
         '''
-        url = url + '/bpp/{}/{}/name'.format(account_type, account_number)
-        return {'This method is not currently supported by the API.'} #return api_response(url, head)
+        url = url + f'/bpp/{account_type}/{account_number}/name'
+        print('This method is not currently supported by the API.')
+        return api_response(url, head)
 
     def mhAccount(account_number, url = URL, head = HEAD):
         '''
@@ -352,7 +353,7 @@ class BPPMH():
         Path: /mh/{an}
         Example: https://preview.mcassessor.maricopa.gov/mh/6214407
         '''
-        url = url + '/mh/{}'.format(account_number)
+        url = url + f'/mh/{account_number}'
         return api_response(url, head)
 
     def mhVIN(vin_number, url = URL, head = HEAD):
@@ -361,7 +362,7 @@ class BPPMH():
         Path: /mh/vin/{vin}
         Example: https://preview.mcassessor.maricopa.gov/mh/vin/4C027073US3617
         '''
-        url = url + '/mh/vin/{}'.format(vin_number)
+        url = url + f'/mh/vin/{vin_number}'
         return api_response(url, head)
 
 class Export():
@@ -379,8 +380,9 @@ class Export():
         Example (with limit): https://preview.mcassessor.maricopa.gov/search/export/property/phoenix?limit=5
         Example (with limit and offset): https://preview.mcassessor.maricopa.gov/search/export/property/phoenix?limit=5&offset=5
         '''
-        url = url + '/search/export/property/{}'.format(query)
-        return {'This method is not currently supported by the API.'} #return api_response(url, head)
+        url = url + f'/search/export/property/{urllib.parse.quote(query)}'
+        print('This method is not currently supported by the API.')
+        return api_response(url, head)
 
     def businessPropertySearch(query, url = URL, head = HEAD):
         '''
@@ -391,8 +393,9 @@ class Export():
         Example (with limit): https://preview.mcassessor.maricopa.gov/search/export/bpp/phoenix?limit=5
         Example (with limit and offset): https://preview.mcassessor.maricopa.gov/search/export/bpp/phoenix?limit=5&offset=5
         '''
-        url = url + '/search/export/bpp/{}'.format(query)
-        return {'This method is not currently supported by the API.'} #return api_response(url, head)
+        url = url + f'/search/export/bpp/{urllib.parse.quote(query)}'
+        print('This method is not currently supported by the API.')
+        return api_response(url, head)
 
     def mobileHomeSearch(query, url = URL, head = HEAD):
         '''
@@ -403,8 +406,9 @@ class Export():
         Example (with limit): https://preview.mcassessor.maricopa.gov/search/export/mh/phoenix?limit=5
         Example (with limit and offset): https://preview.mcassessor.maricopa.gov/search/export/mh/phoenix?limit=5&offset=5
         '''
-        url = url + '/search/export/mh/{}'.format(query)
-        return {'This method is not currently supported by the API.'} #return api_response(url, head)
+        url = url + f'/search/export/mh/{urllib.parse.quote(query)}'
+        print('This method is not currently supported by the API.')
+        return api_response(url, head)
 
     def rentalPropertySearch(query, url = URL, head = HEAD):
         '''
@@ -415,8 +419,9 @@ class Export():
         Example (with limit): https://preview.mcassessor.maricopa.gov/search/export/rentals/phoenix?limit=5
         Example (with limit and offset): https://preview.mcassessor.maricopa.gov/search/export/rentals/phoenix?limit=5&offset=5
         '''
-        url = url + '/search/export/rentals/{}'.format(query)
-        return {'This method is not currently supported by the API.'} #return api_response(url, head)
+        url = url + f'/search/export/rentals/{urllib.parse.quote(query)}'
+        print('This method is not currently supported by the API.')
+        return api_response(url, head)
 
 class Property():
     '''
