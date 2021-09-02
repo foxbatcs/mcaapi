@@ -28,7 +28,7 @@ Here is the documentation for each Class, which defines the inputs and outputs o
 
 ## Search (mcaapi.Search)
 **Parameters**
- * {query} URL encoded query to search. Encoding is handled by the `urllib.parse.quote` method.
+ * `{query}` URL encoded query to search. Encoding is handled by the `urllib.parse.quote` method.
 
 ### all('query')
 Takes an address, parcel number, name, zip code, city, etc, and returns a JSON object for matching results.
@@ -60,7 +60,7 @@ Not currently supported. Please refer to the documentation: https://preview.mcas
 
 ## Parcel (mcaapi.Parcel)
 **Parameters**
- * {apn} APN (Assessor Parcel Number or APN for short) must formatted with (or without) spaces, dashes, or dots.
+ * `{apn}` APN (Assessor Parcel Number or APN for short) must formatted with (or without) spaces, dashes, or dots.
 
 ### details('parcel_number')
 Returns a JSON object with all available parcel data.
@@ -123,10 +123,10 @@ Not currently supported. Please refer to the documentation: https://preview.mcas
 
 ## MapID (mcaapi.MapID)
 **Parameters**
- * {apn} APN (Assessor Parcel Number or APN for short) must formatted with (or without) spaces, dashes, or dots.
- * {mcr} Maricopa County Recorder Number.
- * {sub} Subdivision name. Must be URL encoded.
- * {str} Section/Township/Range. Can be formatted with (or without) spaces, dashes, or dots. '11E01', '011E01', or '01-1E-01' {book} Three digit book portion of an APN.
+ * `{apn}` APN (Assessor Parcel Number or APN for short) must formatted with (or without) spaces, dashes, or dots.
+ * `{mcr}` Maricopa County Recorder Number.
+ * `{sub}` Subdivision name. Must be URL encoded.
+ * `{str}` Section/Township/Range. Can be formatted with (or without) spaces, dashes, or dots. '11E01', '011E01', or '01-1E-01' {book} Three digit book portion of an APN.
  * {map} Two digit map portion of an APN.
 
 ### parcel('parcel_number')

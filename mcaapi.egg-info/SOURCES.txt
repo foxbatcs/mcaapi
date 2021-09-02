@@ -3,6 +3,8 @@ setup.py
 ./mcaapi/__init__.py
 ./mcaapi/inputs.py
 ./mcaapi/mcaapi.py
+./mcaapi/output.py
+./mcaapi/tests.py
 mcaapi.egg-info/PKG-INFO
 mcaapi.egg-info/SOURCES.txt
 mcaapi.egg-info/dependency_links.txt
