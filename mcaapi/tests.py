@@ -26,8 +26,9 @@ isinstance(mcaapi.MapID.mcr(251), list)
 
 
 # BPPMH
-isinstance(mcaapi.BPPMH.details('')[''], dict)
-isinstance(mcaapi.BPPMH.mhAccount('')[''], dict)
-isinstance(mcaapi.BPPMH.mhVIN('')[''], dict)
+isinstance(mcaapi.BPPMH.details('1003384'), list)
+isinstance(mcaapi.BPPMH.account('101068'), set)
+isinstance(mcaapi.BPPMH.mhAccount('6214407'), dict)
+isinstance(mcaapi.BPPMH.mhVIN('4C027073US3617'), dict)
 
-#
+# 

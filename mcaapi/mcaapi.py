@@ -332,6 +332,7 @@ class BPPMH():
         Example: https://preview.mcassessor.maricopa.gov/bpp/l/1145/2020
         '''
         url = url + f'/bpp/{account_type}/{account_number}'
+        print('This method does not provide a response with provided test values.')
         return api_response(url, head)
 
     def account(account_number, account_type = 'c', url = URL, head = HEAD):
