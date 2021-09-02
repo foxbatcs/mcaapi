@@ -7,10 +7,14 @@ import urllib.parse
 
 def api_response(url, headers = HEAD, data = PAYLOAD):
   response = requests.request("GET", url, headers=headers, data=data)
-  apiResponse = json.loads(response.text)
+  try:
+      apiResponse = json.loads(response.text)
+      return apiResponse#, apiResponseDictKeys
+  except json.decoder.JSONDecodeError:
+      print('A JSON Response Was Not Provided.')
+      pass
   #apiResponseDictKeys = list(apiResponse.keys())
   #print(apiResponseDictKeys)
-  return apiResponse#, apiResponseDictKeys
 
 class Search():
     '''

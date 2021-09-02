@@ -31,4 +31,8 @@ isinstance(mcaapi.BPPMH.account('101068'), set)
 isinstance(mcaapi.BPPMH.mhAccount('6214407'), dict)
 isinstance(mcaapi.BPPMH.mhVIN('4C027073US3617'), dict)
 
-# 
+# Exports
+isinstance(mcaapi.Export.realPropertySearch('Phoenix'), list)
+isinstance(mcaapi.Export.businessPropertySearch('Phoenix'), list)
+isinstance(mcaapi.Export.mobileHomeSearch('Phoenix'), list)
+isinstance(mcaapi.Export.rentalPropertySearch('Phoenix'), list)
