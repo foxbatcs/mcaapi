@@ -17,7 +17,7 @@ setup(
     long_description=readme,
     long_description_content_type='text/markdown',
     name="mcaapi",
-    version="0.0.7",
+    version="0.0.8",
     description="A Python wrapper for the Maricopa County Assessor API.",
     python_requires="==3.*",
     project_urls={"repository": "https://github.com/foxbatcs/mcaapi"},
