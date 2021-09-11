@@ -15,6 +15,28 @@ this is run, it will prompt you for the API token. Simply paste the token into
 the prompt, and it will store it in a file located in the source directory of
 the library.
 
+# Quick Examples
+To query an address, name, parcel number (apn), city, street, subdivision, etc, use the `Search.all()` method as follows:
+
+```
+import mcaapi
+resp0 = mcaapi.Search.all('301 W Jefferson, Phoenix') #The Assessor Office's Address
+resp1 = mcaapi.Search.all('Phoenix')
+resp2 = mcaapi.Search.all('11219038A') #The Assessor Office's own APN
+```
+This will return a JSON object with limited information to your variable containing a  maximum number of items (I believe up to 100). Unfortunately, the `limit` and `offset` parameters are currently not working as per the Maricopa County Assessor API docs, which can be found [here [PDF]](https://www.mcassessor.maricopa.gov/file/home/MC-Assessor-2021-API-Documentation.pdf). I have coded in the logic to support this when it is working, and will do my best to keep it updated as things change.
+
+You can get more details for each APN, by using the `Parcel.details()` method as follows:
+
+```
+import mcaapi
+resp3 = mcaapi.Parcel.details('11219038A')
+```
+
+This will provide a substantial number of details about the parcel, its location, ownership, zoning, physical features, and more.
+
+For educational purposes, I have engineered a toy dataset of approximately ten-thousand unique parcels which can be found in the mcaapi/datasets directory.
+
 # Classes
 
 The structure of the wrapper follows the same structure as the API documentation
