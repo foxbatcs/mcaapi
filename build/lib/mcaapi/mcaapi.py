@@ -1,5 +1,5 @@
 from .inputs import *
-
+print('test_version')
 # libraries
 import requests
 import json
@@ -12,6 +12,7 @@ def api_response(url, headers = HEAD, data = PAYLOAD):
       return apiResponse#, apiResponseDictKeys
   except json.decoder.JSONDecodeError:
       print('A JSON Response Was Not Provided.')
+      print(response)
       pass
   #apiResponseDictKeys = list(apiResponse.keys())
   #print(apiResponseDictKeys)

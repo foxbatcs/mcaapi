@@ -126,8 +126,9 @@ Not currently supported. Please refer to the documentation: https://preview.mcas
  * `{apn}` APN (Assessor Parcel Number or APN for short) must formatted with (or without) spaces, dashes, or dots.
  * `{mcr}` Maricopa County Recorder Number.
  * `{sub}` Subdivision name. Must be URL encoded.
- * `{str}` Section/Township/Range. Can be formatted with (or without) spaces, dashes, or dots. '11E01', '011E01', or '01-1E-01' {book} Three digit book portion of an APN.
- * {map} Two digit map portion of an APN.
+ * `{str}` Section/Township/Range. Can be formatted with (or without) spaces, dashes, or dots. '11E01', '011E01', or '01-1E-01'
+ * `{book}` Three digit book portion of an APN.
+ * `{map}` Two digit map portion of an APN.
 
 ### parcel('parcel_number')
 Returns a JSON array of map file names.
