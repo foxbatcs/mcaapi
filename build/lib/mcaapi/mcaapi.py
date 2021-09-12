@@ -1,5 +1,5 @@
 from .inputs import *
-print('test_version')
+
 # libraries
 import requests
 import json
