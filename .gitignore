@@ -1,0 +1,8 @@
+build
+dist/
+mcaapi.egg-info/
+__pycache__/
+.config/
+mcaapi/api_token.txt
+mcaapi/__pycache__
+.git
