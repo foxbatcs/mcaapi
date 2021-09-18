@@ -18,22 +18,23 @@ setup(
     long_description_content_type='text/markdown',
     url='https://mcaapi.readthedocs.io',
     name="mcaapi",
-    version="0.1.2",
+    version="0.1.3",
     description="A Python wrapper for the Maricopa County Assessor API.",
     python_requires="==3.*",
     project_urls={"repository": "https://github.com/foxbatcs/mcaapi"},
-    author="foxbatcs",
+    author="FoxbatCS",
     author_email="fbcs@foxbatcs.com",
     license="MIT",
-    packages=["mcaapi"],
+    packages=find_packages(),
     package_dir={"": "."},
     package_data={
-        'mcaapi': ['datasets/*.csv']
-    },
-    install_requires= find_packages(),
+        'mcaapi': ['*.csv', 'datasets/*.csv', 'datasets/*.rst']
+        },
+    #include_package_data= True,
+    #install_requires= find_packages(exclude = 'test*'),
     extras_require={
         "dev": [
             "wheel==0.*,>=0.30.0"
         ],
-    },
+    }
 )
